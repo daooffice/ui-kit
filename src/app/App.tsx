@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
-import { Switch } from '@/shared/ui'
+import { Switch, Button } from '@/shared/ui'
 import { service } from '@/shared/api'
 import reactLogo from '@/shared/ui/icons/react.svg'
-
+import { Routing } from '@/pages'
+import { withRouter } from '@/app/providers/with-router'
+import { Link } from 'react-router-dom'
 import './App.css'
-import '../index.css'
 
 const App = () => {
   const [count, setCount] = useState('')
@@ -23,20 +24,16 @@ const App = () => {
         <h1 className="font-bold bg-red-500">Vite + React</h1>
         <h4 className="text-slate-500">Some new text</h4>
       </header>
-
       <main>
-        <button
-          className="bg-blue-500 text-white border-slate-700 px-2 rounded-md 
-        hover:bg-violet-600
-        hover:opacity-75
-        ">
+      <Link to='some'>sOME</Link> 
+        <Button>
           text
-        </button>
-
-        <Switch />
+        </Button>
+        <Routing />
+        <Switch switchColor='bg-blue-600'/>
       </main>
     </div>
   )
 }
 
-export default App
+export default withRouter(App)

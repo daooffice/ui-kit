@@ -42,7 +42,7 @@ class Client {
       axios.interceptors.request.use(
         (config: AxiosRequestConfig) => {
           console.log(config)
-          config.headers.Authorization = `Bearer ${token}`
+          // config.headers.Authorization = `Bearer ${token}`
           return config
         },
         (error) => {
@@ -63,35 +63,35 @@ class Client {
     }
   }
 
-  post = async (endpoint, data) => {
-    const request = {
-      url: endpoint,
-      method: 'POST',
-      data
-    }
+  // post = async (endpoint, data) => {
+  //   const request = {
+  //     url: endpoint,
+  //     method: 'POST',
+  //     data
+  //   }
 
-    try {
-      const res = await this.executor(request)
-      return res.data.data
-    } catch (error) {
-      throw new Error(error.message)
-    }
-  }
+  //   try {
+  //     const res = await this.executor(request)
+  //     return res.data.data
+  //   } catch (error) {
+  //     throw new Error(error.message)
+  //   }
+  // }
 
-  get = async (endpoint, params) => {
-    const request = {
-      url: endpoint,
-      method: 'GET',
-      ...(params && { params })
-    }
+  // get = async (endpoint, params) => {
+  //   const request = {
+  //     url: endpoint,
+  //     method: 'GET',
+  //     ...(params && { params })
+  //   }
 
-    try {
-      const res = await this.executor(request)
-      return res.data.data
-    } catch (error) {
-      throw new Error(error.message)
-    }
-  }
+  //   try {
+  //     const res = await this.executor(request)
+  //     return res.data.data
+  //   } catch (error) {
+  //     throw new Error(error.message)
+  //   }
+  // }
 }
 
 export class ClientBuilder implements IClientBuilder {

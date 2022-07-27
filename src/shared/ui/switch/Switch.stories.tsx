@@ -13,5 +13,10 @@ export default {
   component: Switch
 } as ComponentMeta<typeof Switch>
 
+const Template: ComponentStory<typeof Switch> = (args) => <Switch {...args} />
 
-export const Primary: ComponentStory<typeof Switch> = (args) => <Switch {...args} />
+export const Story1 = Template.bind({})
+
+Story1.args = {
+  switchColor: 'bg-red-500'
+}
